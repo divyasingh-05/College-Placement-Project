@@ -1,0 +1,25 @@
+{% include "Header.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Placement Form</title>
+</head>
+<body>
+{% block content %}
+<h1 align="center">College Placement</h1>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}
+
+<style type="text/css">
+    form input{border-radius:10px;width:250px;}
+    form{background-color:#FFB2A6;width:400px;padding:20px;margin-left:10px;}
+    button{margin-left:40%;border-radius:10px;background-color:green;color:white;font-weight:bold;padding:10px;font-size:18px}
+</style>
+
+</body>
+</html>
